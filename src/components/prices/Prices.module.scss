@@ -1,0 +1,44 @@
+.cryptoPrices_wraper{
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    .header, h1{
+      margin-bottom: 1rem;
+    }
+    h1{
+       
+        .symbol{
+            color: gray;
+            font-weight: 600;
+        }
+        .price{
+            margin-left: 3rem;
+            font-weight: 300;
+        }
+    }
+    .cryptoPrices_left{
+        width: 50%;
+    }
+    .cryptoPrices_right{
+        margin: 1rem;
+        width: 40%;
+        div{
+           
+            span{
+                margin: 0.1rem;
+                width: 40%;
+                display: inline-block;
+                padding: 1rem;
+                box-shadow:1px 1px 10px black;
+            }
+            span:first-child{
+                font-weight: 700;
+            }
+        }
+        
+    }
+    .grafic{
+        width: 100%;
+        box-shadow: 1px 1px 10px black;
+    }
+}

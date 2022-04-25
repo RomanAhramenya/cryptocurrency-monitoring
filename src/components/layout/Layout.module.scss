@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: 10rem 10fr;
+  grid-template-rows: 4rem 9fr 4rem;
+  grid-template-areas :
+  "h h " 
+  "nav body" 
+  "foot foot";
+  header{
+      padding: 1rem;
+      background:rgb(14, 14, 71);
+      color: white;
+      grid-area: h;
+  }
+  nav{
+    grid-area: nav;
+    margin: 1rem;
+    
+    div{
+        padding:0.4rem 0.5rem;
+        transition: all 0.2s;
+        &:hover{
+            background:rgba(128, 128, 128, 0.603)
+        }
+    }
+    a{
+        text-decoration: none;
+    }
+    span{
+        padding-left: 1rem;
+        font-weight: 500;
+    }
+}
+main{
+    grid-area: body;
+}
+footer{
+    grid-area: foot;
+}
+}
