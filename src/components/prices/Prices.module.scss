@@ -1,44 +1,130 @@
-.cryptoPrices_wraper{
-    margin: 1rem;
+.wraper {
+  position: relative;
+  h2 {
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .error{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color:red;
+    animation: error 0.2s;
+    background:red;
+    color:white;
+    padding: 1rem;
+    box-shadow:1px 1px 10px red;
+  }
+  .wraper_compare {
     display: flex;
-    justify-content: space-between;
-    .header, h1{
-      margin-bottom: 1rem;
+    justify-content: space-around;
+    
+    .inputWraper{
+      margin-left: 1rem;
+       input {
+      font-size: 1.2rem;
+      box-shadow: 1px 1px 10px black;
     }
-    h1{
-       
-        .symbol{
-            color: gray;
-            font-weight: 600;
+    }
+   
+    .compare {
+      width: 50%;
+      position: relative;
+      .cryptoPrices_margin{
+        margin-left: 0 ;
+      }
+      .grafic{
+        width: 80%;
+      }
+      .popNone{
+          display: none;
+      }
+      .pop{
+          position: absolute;
+          top:3rem;
+          width: 50%;
+          box-shadow:1px 1px 10px black;
+          background-color:rgba(11, 11, 71, 0.973);
+          color:rgb(255, 255, 255);
+          height: 15rem;
+          overflow-y: scroll;
+          mark{
+              color:rgb(8, 241, 8);
+              font-weight: 600;
+              background:transparent;
+          }
+         &::-webkit-scrollbar-track{
+            -webkit-box-shadow: 5px 5px 5px -5px rgb(5, 38, 63) inset;
+            background-color: transparent;
+            border-radius: 10px;
+         }
+         &::-webkit-scrollbar {
+            width: 10px;
+          }
+         &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: linear-gradient(180deg, #0a084b, #0004fd);
+          }
+      }
+      .searchHint_none {
+        display: none;
+      }
+      .searchHint_block {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        transition: all 0.2s;
+        &:hover{
+            background:rgba(128, 128, 128, 0.37)
         }
-        .price{
-            margin-left: 3rem;
-            font-weight: 300;
-        }
+      }
     }
-    .cryptoPrices_left{
-        width: 50%;
+  }
+}
+@keyframes error {
+  0%{top: 100%;opacity: 0;}
+  100%{top: 0;opacity: 1;}
+}
+.cryptoPrices_wraper {
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  .header,
+  h1 {
+    margin-bottom: 1rem;
+  }
+  h1 {
+    .symbol {
+      color: gray;
+      font-weight: 600;
     }
-    .cryptoPrices_right{
-        margin: 1rem;
+    .price {
+      margin-left: 3rem;
+      font-weight: 300;
+    }
+  }
+  .cryptoPrices_left {
+    width: 100%;
+  }
+  
+  .cryptoPrices_right {
+    margin: 1rem;
+    width: 100%;
+    
+    div {
+      span {
+        margin: 0.1rem;
         width: 40%;
-        div{
-           
-            span{
-                margin: 0.1rem;
-                width: 40%;
-                display: inline-block;
-                padding: 1rem;
-                box-shadow:1px 1px 10px black;
-            }
-            span:first-child{
-                font-weight: 700;
-            }
-        }
-        
-    }
-    .grafic{
-        width: 100%;
+        display: inline-block;
+        padding: 1rem;
         box-shadow: 1px 1px 10px black;
+      }
+      span:first-child {
+        font-weight: 700;
+      }
     }
+  }
+  
 }

@@ -6,29 +6,22 @@ import { fetchCrypto } from './CryptoAction';
 import { fetchHistory } from './HistoryActions';
 
 interface ICryptoState {
-    crypto:ICryptoAssets
+    crypto:{
+        [key:string]:ICryptoAssets
+    }
     isLoading:boolean;
     error:string
 }
 
 const initialState: ICryptoState = {
-    crypto:{
-        id: '',
-        rank:'',
-        symbol:'',
-        name:'',
-        supply:'',
-        maxSupply:'',
-        marketCapUsd:'',
-        volumeUsd24Hr:'',
-        priceUsd:'',
-        changePercent24Hr:'',
-        vwap24Hr:'',
-    } ,
+    crypto:{} ,
     isLoading:false,
     error:''
 }
-
+interface IAction {
+    id:string,
+    name:ICryptoAssets
+}
 export const HistorySlice = createSlice({
     name:'crypto',
     initialState,
@@ -36,10 +29,10 @@ export const HistorySlice = createSlice({
         
     },
     extraReducers:{
-        [fetchCrypto.fulfilled.type] : (state,action : PayloadAction<ICryptoAssets>) => {
+        [fetchCrypto.fulfilled.type] : (state,action : PayloadAction<IAction>) => {
             state.isLoading = false;
             state.error = '';
-            state.crypto = action.payload
+            state.crypto[action.payload.id] = action.payload.name
         },
         [fetchCrypto.pending.type] : (state) => {
             state.isLoading = true;

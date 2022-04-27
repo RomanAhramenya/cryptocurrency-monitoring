@@ -17,7 +17,7 @@ const Paginator: FC<IPaginator> = (props) => {
     const dispatch = useAppDispatch()
     const [currentPage, setCurrentPage] = useState(1)
     const [arrButton, setArrButton] = useState<number[]>([])
-    
+  
     useEffect(() => {
         let tempNumberOfPages = [...arrayPages]
         if(currentPage <= 5 ){
@@ -29,7 +29,7 @@ const Paginator: FC<IPaginator> = (props) => {
             setArrButton(tempNumberOfPages)
         }
        
-           dispatch(fetchAssets( String((currentPage-1)*5) ))
+           dispatch(fetchAssets({limit:'5',offset:String((currentPage-1)*5)}  ))
        
         
     }, [currentPage])

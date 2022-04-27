@@ -15,13 +15,16 @@
   nav{
     grid-area: nav;
     margin: 1rem;
-    
-    div{
-        padding:0.4rem 0.5rem;
-        transition: all 0.2s;
+    .item{
+        display: flex;
         &:hover{
             background:rgba(128, 128, 128, 0.603)
         }
+    }
+    div{
+        padding:0.4rem 0.5rem;
+        transition: all 0.2s;
+        
     }
     a{
         text-decoration: none;

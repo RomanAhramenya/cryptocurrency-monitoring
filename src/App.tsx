@@ -17,9 +17,15 @@ import CryptoPrices from './components/prices/cryptoPrices/CryptoPrices';
 function App() {
  const data = useAppSelector(state=>state.assets)
  const [isSelect,setIsSelect] = useState(false)
+
+
+ const clickHandler:React.MouseEventHandler<HTMLDivElement> = () =>{
+  if(isSelect){
+    setIsSelect(false)
+ }}
   return (
     <BrowserRouter>
-    <div className="App" onClick={()=>isSelect? setIsSelect(false):''}>
+    <div className="App" onClick={clickHandler}>
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index element={<Home isSelect={isSelect} setIsSelect={setIsSelect} data={data.assets} isLoading={data.isLoading}/>}/>

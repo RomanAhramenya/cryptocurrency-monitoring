@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import { ICryptoAssets } from '../../models/ICryptoAssets'
-import Loader from '../loader/Loader'
+import Loader from '../common/loader/Loader'
 import AssetsCrypto from './assetsCrypto/AssetsCrypto'
 import style from './Home.module.scss'
 import Paginator from './paginator/Paginator'
@@ -13,8 +13,8 @@ interface IHome {
   isLoading:boolean
 }
 const Home: FC<IHome> = (props) => {
+  console.log('work')
   const { data,isSelect,setIsSelect,isLoading } = props
- console.log(isLoading)
   return (
     <div>
       <div className={style.header}>

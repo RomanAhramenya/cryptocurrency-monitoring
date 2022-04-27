@@ -1,0 +1,75 @@
+h1 {
+  text-align: center;
+}
+.wraper {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  grid-template-rows: 12fr;
+  grid-template-areas: "l c r ";
+  .board {
+    grid-area: c;
+    .input_span{
+        background-color: white;
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: 400;
+        color:black;
+    }
+    input{
+        font-size: 2rem;
+        
+    }
+    .board_header {
+      display: flex;
+      justify-content: center;
+      .board_header__wraper{
+        padding: 1rem;
+        background: rgba(0, 0, 255, 0.459);
+        font-weight: 700;
+        margin: 1rem;
+        border-radius: 0.5rem;
+        div{
+            color: green;
+            font-weight:900;
+            font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .left {
+    grid-area: l;
+    .disabled {
+      left: 1rem;
+    }
+  }
+  .right {
+    grid-area: r;
+    .disabled {
+      right: 1rem;
+    }
+  }
+  .left,
+  .right {
+    div {
+      position: relative;
+      width: 10rem;
+      background: rgba(128, 128, 128, 0.527);
+      padding: 0.5rem;
+      margin: 0.2rem;
+      border: 1px solid black;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+      &:hover {
+        background: rgb(0, 0, 255);
+        color: white;
+      }
+    }
+    .disabled {
+      background: rgba(0, 0, 255, 0.979);
+      color: white;
+    }
+  }
+}

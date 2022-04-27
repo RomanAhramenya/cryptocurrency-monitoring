@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { Outlet } from 'react-router-dom'
 import CustomLink from './CustomLink'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faArrowTrendUp, faChartLine } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faArrowTrendUp, faCodeCompare } from '@fortawesome/free-solid-svg-icons'
 import style from './Layout.module.scss'
 const Layout: FC = () => {
     return (
@@ -12,17 +12,24 @@ const Layout: FC = () => {
             </header>
             <nav>
                 <CustomLink to='/'>
-                    <div> <FontAwesomeIcon icon={faHouse} style={style.icon}/><span>Home</span></div>
-
+                    <div className={style.item}>
+                         <div><FontAwesomeIcon icon={faHouse}/></div> 
+                         <div>Home</div>
+                         </div>
                 </CustomLink>
-
                 <CustomLink to='/prices'>
-                    <div><FontAwesomeIcon icon={faArrowTrendUp} style={style.icon}/><span>Prices</span></div>
+                    <div className={style.item}>
+                        <div><FontAwesomeIcon icon={faArrowTrendUp}/></div>
+                        <div>Prices</div>
+                        </div>
                 </CustomLink>
-
                 <CustomLink to='/charts'>
-
-                    <div><FontAwesomeIcon icon={faChartLine} style={style.icon}/><span>Charts</span></div>
+                    <div className={style.item}>
+                        <div>
+                            <FontAwesomeIcon icon={faCodeCompare}/>
+                            </div>
+                            <div>Exchange</div>
+                            </div>
                 </CustomLink>
             </nav>
             <main>
