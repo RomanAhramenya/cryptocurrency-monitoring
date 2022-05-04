@@ -21,7 +21,7 @@ const Board: FC<IProps> = ({ change1,change2}) => {
       setValue1(Number(e.currentTarget.value));
       
   }
-
+  console.log(value2)
   useEffect(()=>{
     setValue2((value1*Number(change1.price.replace(/[\s,%]/g, '')) )/Number(change2.price.replace(/[\s,%]/g, '')))
   },[value1,value2])
@@ -36,7 +36,7 @@ const Board: FC<IProps> = ({ change1,change2}) => {
         <div className={style.board_header__wraper}>
           {change2.name ? change2.name : 'currency №2'}
           <div>{change2.price} $</div>
-          <div className={style.input}><span className={style.input_span}>{value2}</span></div>
+          <div className={style.input}><span className={style.input_span}>{value2 ? value2 : '0'}</span></div>
           </div>
       </div>
      
